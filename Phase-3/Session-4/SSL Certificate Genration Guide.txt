@@ -1,0 +1,72 @@
+
+
+
+STEP:1 CREATE SPRING BOOT APP 
+	(add Spring-Web dependency)
+
+STEP:2 KEY GENRATION
+---------------------------------------
+
+1. OPEN CMD MOVE TO THE PROJECT FOLDER
+2. COPY THE BELOW CODE
+
+	keytool -genkey -alias selfsigned_localhost_sslserver -keyalg RSA -keysize 2048 -validity 700 -keypass changeit -storepass changeit  -keystore ssl-server.jks
+
+3. ONCE ABOVE CODE WILL RUN IT WILL ASK YOU TO ENGTER BELOW DETAILS:
+	1. firstname: localhost
+	2. organization unit:website
+	3. name of organization website:website
+	4. city:mumbai
+	5. state:maharashtra
+	6. two-letter country code:91
+4. Type Yes
+
+
+5. KEY GENERATED SUCCESSFULLY 
+
+6. COPY THE KEY TO  src>main>resource FOLDER
+
+
+7. create main controller
+---------------------------
+
+maincontroller.Java
+
+package com.simplilearn.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainController {
+	
+	@GetMapping("/")
+	public String Welcome() {
+		return "Welcome to HTTPS";
+	}
+
+}
+
+
+8. appliocation.properties file
+
+goto>resource folder> src>main>resource>application.properties
+copy the below code
+
+
+server.port=8443
+server.ssl.key-alias=selfsigned_localhost_sslserver
+server.ssl.key-password=changeit
+server.ssl.key-store=classpath:ssl-server.jks
+server.ssl.key-store-provider=SUN
+server.ssl.key-store-type=JKS
+
+
+
+9. goto main Application And Run it
+
+10. goto any browser> https://localhost:8443/
+
+then it will ask you about safely so click on Advance> proceed> check the the output
+
+
