@@ -1,0 +1,20 @@
+For API 1:
+
+url: 
+POST:localhost:8082/api/user/
+GET: localhost:8082/api/user/4
+
+{
+    "name": "Nikunj Soni",
+        "email": "ns@gmail.com",
+        "country": "INDIA"
+}
+
+For API 2:
+
+POST: localhost:8081/hobby/
+GET: localhost:8081/hobby/3
+{
+    "userId":3,
+    "hobbyName":"Programming"
+}
