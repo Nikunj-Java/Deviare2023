@@ -1,0 +1,61 @@
+SPORTY SHOES
+----------------
+
+ADMIN: 	1. login and change password
+	2. Able to perform CRUD Operations
+	
+USER:	1. Login and Change Password
+	2. able to purchase product based on productid
+
+----------------------------------------------------------
+
+
+1. create spring starter project> add dependency SPRING WEB, SPRING DATA JPA, MYSQL DRIVER
+2. Setup Application.properties file
+3. Create Java Classes
+	
+	FOR: ADMIN
+	-----------------
+	1. adminEntity
+	2. adminRepo
+	3. adminService
+	4. adminController
+
+	FOR: USER
+	-----------------
+	1. userEntity
+	2. userRepo
+	3. userService
+	4. userController
+
+	FOR: PRODUCT
+	-----------------
+	1. productEntity
+	2. productRepo
+	3. productService
+	4. productController
+
+	FOR: ORDER
+	-----------------
+	1. orderEntity
+	2. orderRepo
+	3. orderService
+	4. orderController
+4. SAVE THE PROJECT AND CHECK THE API WITH POSTMAN TOOL
+
+	FOR: ADMIN
+	-----------------
+	URL: http://localhost:3304/api/admin
+
+	FOR: USER
+	-----------------
+	URL: http://localhost:3304/api/user
+
+	FOR: PRODUCT
+	-----------------
+	URL: http://localhost:3304/api/product
+
+	FOR: ORDER
+	-----------------
+	URL: http://localhost:3304/api/order
+
