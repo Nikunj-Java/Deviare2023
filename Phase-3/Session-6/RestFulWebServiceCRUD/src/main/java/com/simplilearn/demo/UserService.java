@@ -25,11 +25,42 @@ public class UserService {
 	}
 
 	
-	//create method for get user by id--5 min
+	//get user by id
+		public User getUserById(int id) {
+			if(repo.findById(id).isPresent()) 
+				return repo.findById(id).get();
+			else 
+				return null;
 			
-	
-	//create method for delete user by id--5  min
-	
-	
-	//create method for update user by id--5 min
+		}
+		//update user by id
+		public  User updateUser(User user, int id) {
+			
+			if(repo.findById(id).isPresent())
+			{
+				User old= repo.findById(id).get();
+				old.setCountry(user.getCountry());
+				old.setName(user.getName());
+				old.setEmail(user.getEmail());
+				
+				return repo.save(old);
+			}
+			else
+			{
+				return null;
+			}
+			
+		}
+		
+		///DELETE USER BY ID
+		public boolean deleteUser(int id) {
+			
+			if(repo.findById(id).isPresent())
+			{
+				repo.deleteById(id);
+				return true;
+			}
+			else
+				return false;
+		}
 }
